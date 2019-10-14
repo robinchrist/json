@@ -21,6 +21,7 @@
 #include "internal/format.hpp"
 #include "internal/get_by_enum.hpp"
 #include "internal/identity.hpp"
+#include "internal/object.hpp"
 #include "internal/pair.hpp"
 #include "internal/single.hpp"
 #include "internal/type_traits.hpp"
@@ -45,7 +46,8 @@ namespace tao::json
       static_assert( std::is_nothrow_move_assignable_v< public_base_t > );
 
       using array_t = std::vector< basic_value >;
-      using object_t = std::map< std::string, basic_value, std::less<> >;
+      //using object_t = std::map< std::string, basic_value, std::less<> >;
+      using object_t = internal::object< std::string, basic_value, std::less<> >;
 
       basic_value() noexcept = default;
 
