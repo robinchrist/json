@@ -49,8 +49,8 @@ namespace tao::json::internal
       std::vector< std::byte > x;
       tao::binary_view xv;
 
-      std::vector< T > a;
-      std::map< std::string, T, std::less<> > o;
+      typename T::array_t a;
+      typename T::object_t o;
 
       const T* p;
       opaque_ptr_t q;
