@@ -33,7 +33,7 @@ namespace tao::json
 {
    template< typename U, typename V >
    struct traits< std::pair< U, V > >
-      : public pair_traits< U, V >
+      : public fixed_pair_traits< U, V >
    {};
 
    template< typename... Ts >
